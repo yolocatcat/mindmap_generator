@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: yujiayue@123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 0
+    shiro:
+      conf:
+        domain:
+        cookiePath: /
+        successUrl: /index
+        loginView: /login
+        openToken: false
+        sessionTimeout: 1800000
+        algorithmName: md5
+        hashIterations: 5
+        #不拦截的路径
+        sysanon:
+          - /login
+          - /regist
+        #跨域配置
+        allowedOrigins:
+          - /**
+logging:
+  level:
+    root: INFO
+    org.springframework.data.convert.CustomConversions: ERROR
